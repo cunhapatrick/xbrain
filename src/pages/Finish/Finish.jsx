@@ -8,15 +8,13 @@ import * as exampleActions from 'store/modules/example/actions';
 // Components
 import Example from 'components/Example';
 /*
-import ProductCard from 'components/ProductCard';
-import GeneralInput from 'components/GeneralInput';
-import GeneralButton from 'components/GeneralButton';
+import FinishCard from 'components/FinishCard';
 */
 
 // CSS
 // import * as style from './Home.style';
 
-export const Home = () => <Example />;
+export const Finish = () => <Example />;
 
 const mapStateToProps = (state) => ({
 	example: state.example,
@@ -25,4 +23,4 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) =>
 	bindActionCreators(exampleActions, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Finish);

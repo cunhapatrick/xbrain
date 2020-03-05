@@ -9,7 +9,7 @@ import Routes from './routes';
 import store from './store';
 
 // Global Style
-import GlobalStyle from './styles/global';
+import GlobalStyle from './styles/global.style';
 
 const App = () => (
 	<Provider store={store}>
