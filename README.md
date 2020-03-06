@@ -15,7 +15,6 @@ Test project for xbrain, the test is a shop browser similar to a e-commerce with
 
 Project is created with:
 
-- Axios version 0.19.2
 - Commitizen version 4.0.3
 - Commitlint version 8.3.5
 - Cross-env version 7.0.0
@@ -24,6 +23,7 @@ Project is created with:
 - Husky version 4.2.1
 - Lint-staged version 10.0.8
 - Jest version 24.9.0
+- Material-ui version 4.9.5
 - Prettier version 1.19.1
 - Puppeteer version 2.1.1
 - React version: 16.13.0

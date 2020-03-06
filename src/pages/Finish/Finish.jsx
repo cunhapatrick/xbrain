@@ -1,12 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+// import { connect } from 'react-redux';
+// import { bindActionCreators } from 'redux';
 // import PropTypes from 'prop-types';
 
-import * as exampleActions from 'store/modules/example/actions';
-
 // Components
-import Example from 'components/Example';
+// import Example from 'components/Example';
+
 /*
 import FinishCard from 'components/FinishCard';
 */
@@ -14,13 +13,13 @@ import FinishCard from 'components/FinishCard';
 // CSS
 // import * as style from './Home.style';
 
-export const Finish = () => <Example />;
+export const Finish = () => <main />;
 
-const mapStateToProps = (state) => ({
-	example: state.example,
-});
+// const mapStateToProps = (state) => ({
+// 	example: state.example,
+// });
 
-const mapDispatchToProps = (dispatch) =>
-	bindActionCreators(exampleActions, dispatch);
+// const mapDispatchToProps = (dispatch) =>
+// 	bindActionCreators(exampleActions, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Finish);
+// export default connect(mapStateToProps, mapDispatchToProps)(Finish);
