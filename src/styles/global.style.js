@@ -1,10 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-// Design Pattern Variables
-import { generalColors } from './variables.style';
-
-const { $black, $defaultColor } = generalColors;
-
 export default createGlobalStyle`
   * {
     margin: 0;
@@ -18,12 +13,13 @@ export default createGlobalStyle`
   }
 
   body {
-    background: ${$defaultColor};
+    padding-top: 50px;
+    background: white;
     -webkit-font-smothing: antialiased !important;
   }
 
   body, input, button {
-    color: ${$black};
+    color: #000000;
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
   }

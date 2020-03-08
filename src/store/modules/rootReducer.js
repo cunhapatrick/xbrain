@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
 
-import example from './example/reducer';
+import products from './product/reducer';
 
 export default combineReducers({
-	example,
+	products,
+	form: formReducer,
 });
