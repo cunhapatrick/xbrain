@@ -21,15 +21,20 @@ export const Hr = styled.hr`
 export const SectionPurchase = styled.section`
 	float: right;
 	text-align: right;
-	margin-top: 15px;
+	margin: 15px 0 30px 0;
 	font-weight: bold;
 	font-size: 22px;
 	max-width: 200px;
 
 	> button {
+		float: right;
+		max-width: 180px;
 		margin-top: 10px;
+		font-size: 14px;
+		font-weight: bolder;
+		display: block;
+		border-radius: 5px;
 		background: orange;
-		font-weight: bold;
 		color: white;
 	}
 `;

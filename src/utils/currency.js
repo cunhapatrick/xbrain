@@ -28,3 +28,8 @@ export const formatCurrency = (
 			: '')
 	);
 };
+
+export const sumTotal = (products) => {
+	const totalArray = products.map((p) => p.price * p.qtd);
+	return totalArray.length > 0 ? totalArray.reduce((a, t) => a + t) : 0;
+};
