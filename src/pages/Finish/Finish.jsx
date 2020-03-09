@@ -28,7 +28,7 @@ export const Finish = ({ products, updateProducts }) => {
 		document.body.style.backgroundColor = 'lightgrey';
 		updateProducts(getLocalStorage('products'));
 		setUser(getLocalStorage('user'));
-	}, []);
+	}, [updateProducts]);
 
 	const total = formatCurrency(sumTotal(products));
 

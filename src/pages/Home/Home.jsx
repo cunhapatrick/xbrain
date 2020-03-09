@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Container, Grid, Typography, Button } from '@material-ui/core';
-import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 // redux actions
@@ -20,7 +19,12 @@ import UserForm from 'components/UserForm';
 // CSS
 import * as Style from './Home.style';
 
-export const Home = ({ products, purchaseProduct, updateProducts }) => {
+export const Home = ({
+	products,
+	purchaseProduct,
+	updateProducts,
+	history,
+}) => {
 	const [active, setActive] = useState(-1);
 	const [errors, setErrors] = useState({
 		name: '',
@@ -32,12 +36,11 @@ export const Home = ({ products, purchaseProduct, updateProducts }) => {
 		document.body.style.backgroundColor = 'white';
 		const prod = getLocalStorage('products');
 		if (prod) updateProducts(prod);
-	}, []);
+	}, [updateProducts]);
 
 	const classes = Style.useStyles();
 	const total = sumTotal(products);
 	const formRef = useRef(null);
-	const { push } = useHistory();
 
 	const handleFinishPurchase = () => formRef.current.submit();
 	const handleSubmit = (values) => {
@@ -78,7 +81,7 @@ export const Home = ({ products, purchaseProduct, updateProducts }) => {
 		} else {
 			setLocalStorage('products', products);
 			setLocalStorage('user', values);
-			push('/finish');
+			history.push('/finish');
 		}
 	};
 
@@ -98,8 +101,15 @@ export const Home = ({ products, purchaseProduct, updateProducts }) => {
 				className={classes.root}
 				spacing={3}
 			>
-				{products.map((product) => (
-					<Grid item xs={12} sm={4} md={3} key={product.id}>
+				{products.map((product, i) => (
+					<Grid
+						item
+						xs={12}
+						sm={4}
+						md={3}
+						id={`productCard-${i}`}
+						key={product.id}
+					>
 						<ProductCard
 							active={product.id === active}
 							product={product}
@@ -119,8 +129,12 @@ export const Home = ({ products, purchaseProduct, updateProducts }) => {
 				<UserForm ref={formRef} errors={errors} onSubmit={handleSubmit} />
 			</section>
 			<Style.SectionPurchase>
-				Total R$ {formatCurrency(total)}
-				<Button variant="contained" onClick={handleFinishPurchase}>
+				Total R$ <span id="total-price">{formatCurrency(total)}</span>
+				<Button
+					id="button-finish-purchase"
+					variant="contained"
+					onClick={handleFinishPurchase}
+				>
 					Finalizar Compra
 				</Button>
 			</Style.SectionPurchase>
@@ -130,6 +144,7 @@ export const Home = ({ products, purchaseProduct, updateProducts }) => {
 
 Home.propTypes = {
 	products: PropTypes.array.isRequired,
+	history: PropTypes.object.isRequired,
 	updateProducts: PropTypes.func.isRequired,
 	purchaseProduct: PropTypes.func.isRequired,
 };

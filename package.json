@@ -58,7 +58,7 @@
 		"start": "cross-env NODE_PATH=src react-scripts start",
 		"build": "cross-env NODE_PATH=src react-scripts build",
 		"test": "cross-env NODE_PATH=src react-scripts test",
-		"e2e": "cross-env CI=true yarn test --testMatch='**/*.e2e.js' -b",
+		"e2e": "cross-env node src/e2e/finishPurchase.e2e.js",
 		"eject": "cross-env NODE_PATH=src react-scripts eject"
 	},
 	"eslintConfig": {
@@ -93,7 +93,6 @@
 		"husky": "^4.2.3",
 		"lint-staged": "^10.0.8",
 		"prettier": "^1.19.1",
-		"redux-mock-store": "^1.5.4",
 		"stylelint": "^13.2.0",
 		"stylelint-config-styled-components": "^0.1.1"
 	},

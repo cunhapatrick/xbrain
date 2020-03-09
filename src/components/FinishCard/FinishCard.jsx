@@ -13,9 +13,15 @@ const FinishCard = ({ name, total }) => {
 
 	return (
 		<Paper className={containerClass.root}>
-			<Style.Title>{name},</Style.Title>
+			<Style.Title>
+				<span id="username">{name}</span>,
+			</Style.Title>
 			<Style.Text component="div">
-				Sua compra no valor <span>R$ {total}</span> foi finalizada com sucesso{' '}
+				Sua compra no valor{' '}
+				<span>
+					R$ <span id="total-price">{total}</span>
+				</span>{' '}
+				foi finalizada com sucesso{' '}
 			</Style.Text>
 			<Style.Img src="img/purchase.png" alt="purchase" title="purchase image" />
 			<Link href="/" className={linkClass.root}>

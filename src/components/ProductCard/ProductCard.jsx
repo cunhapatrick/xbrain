@@ -67,6 +67,7 @@ const ProductCard = ({
 					<Style.SectionAmount>
 						<Style.RemoveIconButton
 							amount={amount}
+							name="remove-button"
 							onClick={() => handleAmount({ name: 'remove' })}
 						>
 							<RemoveIcon />
@@ -78,7 +79,10 @@ const ProductCard = ({
 							variant="outlined"
 							onChange={handleAmount}
 						/>
-						<Style.AddIconButton onClick={() => handleAmount({ name: 'plus' })}>
+						<Style.AddIconButton
+							name="plus-button"
+							onClick={() => handleAmount({ name: 'plus' })}
+						>
 							<AddIcon />
 						</Style.AddIconButton>
 					</Style.SectionAmount>
@@ -86,6 +90,7 @@ const ProductCard = ({
 						fullWidth
 						variant="contained"
 						color="primary"
+						name="add-button"
 						onClick={() => purchase(product.id, amount)}
 					>
 						adicionar

@@ -41,10 +41,10 @@ To assure the quality of the project, some measures have been taken:
 - Eslint & prettier monitoring, alert and fix the code pattern of javascript related files following the airbnb styleguide;
 - Directory structure design to be easy to find specific components & features;
 - EditorConfig configure to force a code pattern independent of the editor;
-- End-to-End test coveraging the "happy path" of a user;
+- End-to-End test coveraging the "happy path" of a user and printing the result of each screen;
 - Git-hooks and automated tools (husky, lint-staged, commitizen, commitlint to padronize commit messages and test procedures before pushing the code on the online repository to avoid sending bug code to it;
 - Git-flow to padronize the git structure of branchs and release;
-- Unit/Integration test coverage;
+- Unit test coverage;
 - Reactotron to debug the redux & redux-saga middleware more efficiently;
 - Stylelint to monitore, alert and fix de code pattern of style related files;
 
